@@ -13,7 +13,7 @@
 //!      to assert the wall actually has a hole. A SOLID UNCUT wall fails.
 //!
 //! Two fixtures are checked — both are reported regression cases:
-//!   - `tests/fixtures/issue-604/door.ifc` (issue #604, PR #605 head)
+//!   - `tests/models/various/issue-604-door.ifc` (issue #604, PR #605 head)
 //!   - `tests/models/ara3d/AC-20-Smiley-West-10-Bldg.ifc` (issue #584)
 //!
 //! These tests are gated on the fixtures being present so CI without
@@ -261,7 +261,7 @@ fn process_host_like_production(
 /// Reproducer for issue #604 — a single-wall fixture with a single door.
 #[test]
 fn door_604_wall_55_has_a_hole() {
-    let content = match load_fixture("tests/fixtures/issue-604/door.ifc") {
+    let content = match load_fixture("tests/models/various/issue-604-door.ifc") {
         Some(c) => c,
         None => {
             eprintln!("door.ifc fixture missing — skipping production void test");
